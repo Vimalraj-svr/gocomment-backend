@@ -30,11 +30,11 @@ app.post('/getcomments', async (req, res) => {
       }
   };
   const format = `{
-      "comments": "generated comments"
+      "comments": "generated string like comments"
   }`;
   const messages = [
       { role: "system", content: `Act as an Code Analyser.` },
-      { role: "user", content: `Generate good and Explanatory Comments for the give code snippet\n${snippet}, Just give me only the object with comment as keys with their respective contents only in this format ${format}` },
+      { role: "user", content: `Generate Simple and user understandable string like Comments for the give code snippet\n${snippet}, Just give me only the response object with comment as key with its overall string comment strictly only in this format ${format}` },
   ];
   console.log("Comments messages ----->",messages);
   try {
@@ -73,7 +73,7 @@ app.post('/getvulnerabilities', async (req, res) => {
   }`;
   const messages = [
       { role: "system", content: `Act as an Code Analyser.` },
-      { role: "user", content: `Generate good and Explanatory vulnerability in the give code snippet\n${snippet}, Just give me only the object with vulnerability as key with their respective vulnerabilities as array only in this format ${format}` },
+      { role: "user", content: `Generate any vulnerability in the give code snippet if exists\n${snippet}, Just give me only the vulnerability as key with their array of vulnerabilities only in this format ${format}` },
   ];
   console.log("Vulnerabilities messages----->",messages);
   try {
